@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 60%;
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 8px 15px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-item {
+  width: 150px;
+  text-align: center;
+}
+
+.book-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.spinner {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .book-item {
+    width: 120px;
+  }
+
+  .search-bar input {
+    width: 70%;
+  }
+}

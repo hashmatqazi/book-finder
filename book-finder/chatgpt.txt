@@ -1,0 +1,184 @@
+have a task to build a “Book Finder” app using the Open Library API. The user persona is Alex, a college student who wants to search books easily...using react what installation is needed
+Perfect 👍 — since you’re building a Book Finder app using React and the Open Library API, let’s make sure your setup is ready.
+
+🧰 Step-by-Step Installation Guide
+1️⃣ Install Node.js
+
+You must have Node.js installed (version 18+ or 22+ preferred).
+✅ Check:
+
+node -v
+npm -v
+
+
+If not installed, download from 👉 https://nodejs.org
+
+2️⃣ Create Your React App (with Vite for speed)
+
+Use Vite (modern React setup) instead of create-react-app.
+
+For JavaScript:
+npm create vite@latest book-finder -- --template react
+For TypeScript (recommended):
+
+npm create vite@latest book-finder -- --template react-ts
+Then:
+
+cd book-finder
+npm install
+Start the App
+npm run dev
+
+
+👉 It will show a local URL (like http://localhost:5173) — open it in your browser.
+Install Useful Libraries
+
+You’ll need some extra libraries to make the app look and work nicely.
+
+💡 Optional but recommended:
+npm install axios react-icons
+npm install @mui/material @emotion/react @emotion/styled   # (if using Material UI)
+
+5️⃣ API You’ll Use
+You’ll be calling the Open Library Search API:
+
+https://openlibrary.org/search.json?q=harry+potter
+
+
+Example fetch (in React):
+
+import axios from "axios";
+import { useState } from "react";
+
+function BookFinder() {
+  const [query, setQuery] = useState("");
+  const [books, setBooks] = useState([]);
+
+  const searchBooks = async () => {
+    const res = await axios.get(`https://openlibrary.org/search.json?q=${query}`);
+    setBooks(res.data.docs);
+  };
+
+  return (
+    <div>
+      <h1>📚 Book Finder</h1>
+      <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Search books..." />
+      <button onClick={searchBooks}>Search</button>
+      <ul>
+        {books.map((book, i) => (
+          <li key={i}>{book.title} by {book.author_name?.[0]}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default BookFinder;
+
+I already installed thus apart from that
+Excellent 👍 — if you already installed React + Vite and can run the app (npm run dev works), then you’ve done the main setup.
+
+Now, let’s see what else you might need specifically for the Book Finder project — beyond the base installation.
+Additional Things You May Need
+1️⃣ API Fetching Library
+
+If not already installed:
+
+npm install axios
+
+
+➡️ Makes it easier to call the Open Library API.
+Styling Options (choose one)
+
+You’ll want your Book Finder to look neat.
+
+Option A — Tailwind CSS (simple + modern)
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+
+Then edit tailwind.config.js:
+content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+and add in src/index.css:
+
+css
+Copy code
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+Run npm run dev again — now you can use Tailwind classes like:
+Option B — Material UI
+npm install @mui/material @emotion/react @emotion/styled
+
+
+Then you can use ready components like <TextField> and <Button>.
+I installed node 22 version 
+You said:
+I want setup
+You said:
+Yes
+You said:
+I make folder as project
+You said:
+My local address 3000 showing 
+You said:
+How to share this link in github
+You said:
+No path directy
+You said:
+Error 
+You said:
+But I got output in browser 
+I want simple 
+Install axios
+
+To fetch data easily:
+
+npm install axios
+
+
+That’s it.
+No need for Tailwind, router, or MUI if you want simple.
+Folder Setup
+
+Your Vite app already has:
+
+book-finder/
+ ┣ src/
+ ┃ ┣ App.jsx
+ ┃ ┣ main.jsx
+ ┃ ┗ index.css
+ ┣ index.html
+ ┣ package.json
+
+Run Your App
+npm run dev
+
+I installed node 22 version
+I want setup
+npm create vite@latest book-finder -- --template react
+cd book-finder
+npm install
+npm install axios
+npm run dev
+You’ll see something like:
+
+Local:   http://localhost:5173/
+My local address 3000 showing
+If your app is running at
+👉 http://localhost:3000/
+
+then it means you probably created your React app using Create React App (CRA) instead of Vite — and that’s 100% okay.
+Since you’re using Create React App, just follow these simple steps 👇
+
+1️⃣ Install axios
+npm install axios
+Save all files and go back to your terminal
+
+If your app is still running, it will automatically reload.
+If not, run:
+
+npm start
+
+
+Then visit 👉 http://localhost:3000
